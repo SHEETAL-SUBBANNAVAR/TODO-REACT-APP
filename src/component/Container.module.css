@@ -1,0 +1,6 @@
+.Container {
+  background: linear-gradient(to right, #effde6, #ffba8b);
+  min-width: 900px;
+  max-width: 1500px;
+  align-content: center;
+}
