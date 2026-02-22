@@ -9,18 +9,7 @@ import { useState } from "react";
 function App() {
 
   const initialtodoItems = [
-    // {
-    //   name: "Buy milk",
-    //   dueDate: "04/09/2025",
-    // },
-    // {
-    //   name: "go to college",
-    //   dueDate: "04/09/2025",
-    // },
-    // {
-    //   name: "drink milk",
-    //   dueDate: "04/09/2025",
-    // },
+
 
   ];
 
