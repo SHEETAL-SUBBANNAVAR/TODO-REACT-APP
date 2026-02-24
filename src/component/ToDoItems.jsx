@@ -3,8 +3,12 @@ import { TodoItmscontext } from "../../store/todo-items-store";
 import Todoitem from "./Todoitem";
 import styles from "./TodoItems.module.css";
 
-const ToDoItems = ({ onDeleteClick }) => {
-  const todoItems = useContext(TodoItmscontext);
+const ToDoItems = () => {
+  const { todoItems, deleteItem } = useContext(TodoItmscontext);
+
+
+
+
   return (
     <div className={styles.itemsContainer}>
       {todoItems.map((item, index) => (
@@ -12,7 +16,7 @@ const ToDoItems = ({ onDeleteClick }) => {
           key={index}
           todoName={item.name}
           todoDate={item.dueDate}
-          onDeleteClick={onDeleteClick}
+          onDeleteClick={deleteItem}
         />
       ))}
     </div>

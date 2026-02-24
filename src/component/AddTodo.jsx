@@ -1,10 +1,14 @@
 import { useState, useRef } from "react";
 import { MdAddComment } from "react-icons/md";
+import { useContext } from "react";
+import { TodoItmscontext } from "../../store/todo-items-store";
 
-function AddTodo({ onNewItem }) {
+function AddTodo() {
 
   const todonameElement = useRef();
   const duedateElement = useRef();
+  const { addNewItem } = useContext(TodoItmscontext);
+
 
 
   const handelAddButtonClicked = () => {
@@ -13,7 +17,7 @@ function AddTodo({ onNewItem }) {
 
     todonameElement.current.value = "";
     duedateElement.current.value = "";
-    onNewItem(todoname, duedate)
+    addNewItem(todoname, duedate)
 
     console.log(todoname);
 

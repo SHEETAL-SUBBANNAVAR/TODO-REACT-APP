@@ -17,13 +17,13 @@ function App() {
 
   const [todoItems, setTodoItems] = useState(initialtodoItems);
 
-  const handleDeleteItem = (itemName) => {
+  const deleteItem = (itemName) => {
     const newTodoItems = todoItems.filter((item) => item.name !== itemName);
     setTodoItems(newTodoItems);
     console.log(`item was deleted : ${itemName}`);
 
   }
-  const handleNewItem = (itemName, ItemDueDate) => {
+  const addNewItem = (itemName, ItemDueDate) => {
     console.log(`new Item added : ${itemName} Date :${ItemDueDate}`);
 
     const newTodoItems = [...todoItems, { name: itemName, dueDate: ItemDueDate },
@@ -36,15 +36,20 @@ function App() {
 
   return (
     <TodoItmscontext.Provider
-      value={[]}
+      value={{
+        todoItems,
+        addNewItem,
+        deleteItem,
+      }
+      }
     >
       <Container>
         <center className="todo-container">
           <AppName />
-          <AddTodo onNewItem={handleNewItem} />
+          <AddTodo />
           <Wellcome></Wellcome>
 
-          <ToDoItems onDeleteClick={handleDeleteItem}></ToDoItems>
+          <ToDoItems ></ToDoItems>
 
         </center>
       </Container>
